@@ -1680,3 +1680,42 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   body.панель-с-переходом .липкая-кнопка { transition: none; }
 }
+
+/* экран 02 */
+#экран-02 .внутри-сетка { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+  #экран-02 .шапка-слева { position: sticky; top: 32px; display: grid; gap: 14px; justify-items: start; }
+  #экран-02 .шапка-слева > * { margin-bottom: 0; }
+  #экран-02 .карточки { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--отступ-блока); }
+  #экран-02 .карт { display: grid; gap: 14px; align-content: start; padding: clamp(20px, 2.2vw, 28px);
+      border-radius: var(--радиус-карточки); border: var(--нить) solid; }
+  #экран-02 .карт > * { margin: 0; }
+  #экран-02 .карт__верх { display: flex; align-items: center; gap: 14px; }
+  #экран-02 .карт__икон { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 50%; }
+  #экран-02 .карт__икон .иконка { width: 24px; height: 24px; color: inherit; }
+  #экран-02 .карт h3 { font-weight: 700; font-size: var(--кегль-лид); line-height: 1.2; margin: 0; }
+  #экран-02 .карт__вид { font-size: var(--кегль-мелкий); }
+  #экран-02 .карт ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  #экран-02 .карт li { position: relative; padding-left: 18px; font-size: var(--кегль-текст); line-height: 1.5; }
+  #экран-02 .карт li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; }
+  #экран-02 .карт--север { grid-column: 1 / -1; border-left-width: 4px; }
+  #экран-02 .карт--север p { font-size: var(--кегль-текст); line-height: 1.55; }
+  #экран-02 .итог-строка { margin: clamp(20px, 2.4vw, 32px) 0 0; font-size: var(--кегль-мелкий); line-height: 1.5; }
+
+  #экран-02.светлый .карт { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); color: var(--цвет-текст); box-shadow: var(--тень); }
+  #экран-02.светлый .карт__икон { background: var(--цвет-фон-2); color: var(--цвет-акцент); }
+  #экран-02.светлый .карт__вид, #экран-02.светлый .итог-строка { color: var(--цвет-текст-мягкий); }
+  #экран-02.светлый .карт li::before { background: var(--цвет-акцент-маркер); }
+  #экран-02.светлый .карт--север { border-left-color: var(--цвет-акцент); }
+  #экран-02.тёмный .карт { background: var(--цвет-тёмный-фон-2); border-color: var(--цвет-тёмный-фон-4); color: var(--цвет-тёмный-текст); }
+  #экран-02.тёмный .карт__икон { background: var(--цвет-тёмный-фон-4); color: var(--цвет-тёплый-мягкий); }
+  #экран-02.тёмный .карт__вид, #экран-02.тёмный .итог-строка { color: var(--цвет-тёплый-мягкий); }
+  #экран-02.тёмный .карт li::before { background: var(--цвет-тёплый); }
+  #экран-02.тёмный .карт--север { border-left-color: var(--цвет-тёплый); }
+
+  @media (max-width: 899px) {
+    #экран-02 .внутри-сетка { grid-template-columns: 1fr; }
+    #экран-02 .шапка-слева { position: static; }
+  }
+  @media (max-width: 599px) {
+    #экран-02 .карточки { grid-template-columns: 1fr; }
+  }
