@@ -1793,3 +1793,33 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-04 .цены { grid-template-columns: 1fr; }
     #экран-04 .кнопка-под .кнопка { width: 100%; justify-content: center; }
   }
+
+/* экран 05 */
+#экран-05 .шапка-центр { display: grid; gap: 14px; justify-items: center; text-align: center; max-width: 42rem; margin: 0 auto clamp(28px, 4vw, 52px); }
+  #экран-05 .шапка-центр > * { margin-bottom: 0; }
+  #экран-05 .отзывы { display: grid; gap: var(--отступ-блока); max-width: 60rem; margin-inline: auto; }
+  #экран-05 .ряд { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--отступ-блока); }
+  #экран-05 .отзыв { display: grid; gap: 14px; align-content: start; margin: 0; padding: clamp(22px, 2.4vw, 30px);
+      border-radius: var(--радиус-карточки); border: var(--нить) solid; }
+  #экран-05 .отзыв > *, #экран-05 blockquote { margin: 0; }
+  #экран-05 .отзыв--главный { padding: clamp(26px, 3.4vw, 44px); gap: 18px; }
+  #экран-05 .метка { justify-self: start; padding: 4px 12px; border-radius: 9em; border: var(--нить) solid; font-size: var(--кегль-мелкий); line-height: 1.3; }
+  #экран-05 .цитата { font-size: var(--кегль-текст); line-height: 1.6; }
+  #экран-05 .отзыв--главный .цитата { font-size: var(--кегль-лид); line-height: 1.5; font-weight: 600; }
+  #экран-05 .подпись { display: grid; gap: 2px; padding-top: 14px; border-top: var(--нить) solid; }
+  #экран-05 .подпись__имя { font-weight: 700; font-size: var(--кегль-текст); line-height: 1.3; }
+  #экран-05 .подпись__где { font-size: var(--кегль-мелкий); line-height: 1.4; }
+  #экран-05 .итог { margin: clamp(22px, 3vw, 36px) auto 0; max-width: 44rem; text-align: center; font-size: var(--кегль-мелкий); line-height: 1.55; }
+
+  #экран-05.светлый .отзыв { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); color: var(--цвет-текст); box-shadow: var(--тень); }
+  #экран-05.светлый .метка { border-color: var(--цвет-линия); color: var(--цвет-акцент); background: var(--цвет-фон-2); }
+  #экран-05.светлый .подпись { border-top-color: var(--цвет-линия); }
+  #экран-05.светлый .подпись__где, #экран-05.светлый .итог { color: var(--цвет-текст-мягкий); }
+  #экран-05.тёмный .отзыв { background: var(--цвет-тёмный-фон-2); border-color: var(--цвет-тёмный-фон-4); color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .метка { border-color: var(--цвет-тёмный-фон-4); color: var(--цвет-тёплый-мягкий); background: var(--цвет-тёмный-фон-4); }
+  #экран-05.тёмный .подпись { border-top-color: var(--цвет-тёмный-фон-4); }
+  #экран-05.тёмный .подпись__где, #экран-05.тёмный .итог { color: var(--цвет-тёплый-мягкий); }
+
+  @media (max-width: 799px) {
+    #экран-05 .ряд { grid-template-columns: 1fr; }
+  }
