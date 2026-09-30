@@ -21,10 +21,10 @@
   --цвет-акцент: #71090A;  --цвет-акцент-тёмный: #5C0708;  --цвет-акцент-яркий: #A8262A;  --цвет-на-акценте: #F6F3EE;
   --цвет-акцент-глубже: #5C0708;  --цвет-акцент-маркер: #93302A;
   --цвет-линия: #DDD4C6;
-  --цвет-тёмный-фон: #26261C;  --цвет-тёмный-фон-2: #302F25;  --цвет-тёмный-текст: #F6F3EE;
-  --цвет-тёмный-фон-3: #1C1C14;  --цвет-тёмный-фон-4: #3A382E;
+  --цвет-тёмный-фон: #0E1526;  --цвет-тёмный-фон-2: #141C33;  --цвет-тёмный-текст: #F6F3EE;
+  --цвет-тёмный-фон-3: #0A0F1C;  --цвет-тёмный-фон-4: #172039;
   --цвет-тёплый: #AC8E76;  --цвет-тёплый-мягкий: #CDBBA7;
-  --цвет-стекло: color-mix(in srgb, #26261C 86%, transparent);
+  --цвет-стекло: color-mix(in srgb, #0E1526 86%, transparent);
   --тень: 0 12px 34px color-mix(in srgb, #26261C 6%, transparent);
   --тень-чип: 0 10px 30px color-mix(in srgb, #26261C 12%, transparent);
   --тень-глубокая: 0 24px 60px color-mix(in srgb, #26261C 35%, transparent);
@@ -36,7 +36,7 @@
   --отступ-секции: clamp(64px, 10vw, 136px);  --отступ-блока: clamp(18px, 2.2vw, 32px);
   --отступ-секции-тихо: clamp(50px, 7.8vw, 106px);  --отступ-секции-громко: clamp(74px, 11.6vw, 158px);
   --ширина: 1140px;  --ширина-колонки: 580px;  --радиус: 8px;  --радиус-малый: 4px;
-  --радиус-карточки: 10px;  --радиус-плитки: 12px;  --радиус-телефон: 46px;  --кнопка-радиус: 6px;
+  --радиус-карточки: 10px;  --радиус-плитки: 12px;  --радиус-телефон: 46px;  --кнопка-радиус: 999px;
   --радиус-модуля: 8px;  --нить: 1px;
   --плавность: cubic-bezier(.2, .7, .2, 1);  --длительность: .25s;
   --цвет-тёплый-тёмный: #856851;
@@ -45,7 +45,7 @@
   :root { --кегль-h1: clamp(46px, 4.4vw, 62px); }
 }
 :root, .светлый { --цвет-кнопки: #71090A; --цвет-на-кнопке: #F6F3EE; --цвет-кнопки-навёл: var(--цвет-акцент-тёмный); }
-.тёмный { --цвет-кнопки: #AC8E76; --цвет-на-кнопке: #26261C; --цвет-кнопки-навёл: #BBA38F; }
+.тёмный { --цвет-кнопки: #AC8E76; --цвет-на-кнопке: #0E1526; --цвет-кнопки-навёл: #BBA38F; }
 
 </style>
 <script>
@@ -91,35 +91,54 @@
 </script>
 </head>
 <body class="с-липкой-кнопкой">
-<section class="блок блок--первый-экран первый-экран--разворот тёмный фон--пятна сторона--слева" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото">
-<style>
-  /* «спешки» на бордовой обложке: красный акцент почти сливался с фоном (1,9), берём тёплый светлый */
-  #экран-1.тёмный .акцент { color: var(--цвет-тёплый-мягкий); }
-</style>
+<section class="блок блок--первый-экран тёмный фон--пятна сторона--слева" id="экран-01" data-тип="первый-экран" data-вёрстка="своя">
   <header class="шапка">
-    <a class="шапка__лого" href="#">Ольга Ярославцева · риэлтор</a>
+    <a class="шапка__лого" href="#">Ольга Ярославцева <b>· риэлтор</b></a>
     <span class="шапка__лиц"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
-</svg><span><span class="полн">ИП Ярославцева О. В. · Тюмень</span><span class="кратко">ИП · Тюмень</span></span></span>
+</svg><span><span class="полн-шапка">ИП Ярославцева О. В. · </span>Тюмень</span></span>
   </header>
-  <span class="пятно пятно--1"></span><span class="пятно пятно--2"></span>
-  <div class="блок__внутри">
-    <div class="первый-экран__текст">
-      <p class="кикер"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
-</svg>Сопровождение сделок с жильём в Тюмени</p>
-      <h1>Как купить жильё в Тюмени без давления и <em class="акцент">спешки</em></h1>
-      <p class="лид">Риэлтор и ипотечный брокер Ольга Ярославцева. Покупаете или продаёте&nbsp;— веду сделку надёжно, от консультации до ключей</p>
-      <ul class="список-иконок">
-        <li><i class="галка"></i><span>В недвижимости с 2018 года — работаю в Тюмени</span></li>
-        <li><i class="галка"></i><span>Новостройки, вторичка, дома, земля — покупка и продажа</span></li>
-        <li><i class="галка"></i><span>Ипотека — входит в сопровождение, отдельно искать брокера не нужно</span></li>
+  <div class="афиша">
+    <div class="афиша__текст">
+      <p class="кикер-афиши">Риэлтор и ипотечный брокер</p>
+      <h1><span class="h1-верх">Как купить жильё в Тюмени</span><span class="h1-крупно">без давления и <em>спешки</em></span></h1>
+      <div class="черта"></div>
+      <p class="лид-афиши">Покупаете или продаёте&nbsp;— веду сделку <em>надёжно</em>, от&nbsp;консультации до&nbsp;ключей</p>
+      <ul class="цифры-афиши">
+        <li><b>с 2018</b><span>работаю<br>в Тюмени</span></li>
+        <li><b>4 вида</b><span>квартиры, дома,<br>земля</span></li>
+        <li><b>0 ₽</b><span>первая<br>консультация</span></li>
       </ul>
-      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Написать в MAX</a></div>
+      <div class="кнопки-афиши">
+        <a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Написать в MAX</a>
+        <a class="кнопка-контур" href="#экран-04">Сколько стоит</a>
+      </div>
+      <p class="пилюля"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 5h16v11H9l-5 4z"/>
+</svg><span>Ипотека <b>входит в сопровождение</b> — брокера искать не нужно</span></p>
     </div>
-    <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .22">
-      <picture><source media="(max-width: 899px)" srcset="img/olga-za-stolom.webp"><img src="img/olga-za-stolom.webp" alt="Как купить жильё в Тюмени без давления и спешки" data-лицо="50,22" fetchpriority="high"></picture>
-    </figure>
+    <div class="сцена">
+      <figure class="первый-экран__картинка кадр-афиши" style="--лицо-в-кадре: .22">
+        <picture><source media="(max-width: 899px)" srcset="img/olga-za-stolom.webp"><img src="img/olga-za-stolom.webp" alt="Ольга Ярославцева, риэлтор в Тюмени" data-лицо="50,22" fetchpriority="high"></picture>
+      </figure>
+      <div class="услуга услуга--1"><i class="услуга__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>
+</svg></i><b>Новостройки</b><span>подбор, проверка застройщика</span></div>
+      <div class="услуга услуга--2"><i class="услуга__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="5" y="2" width="12" height="20" rx="1"/>
+  <path d="M3 22h18"/>
+  <circle cx="14" cy="12" r="1"/>
+</svg></i><b>Вторичка</b><span>проверка квартиры и продавца</span></div>
+      <div class="услуга услуга--3"><i class="услуга__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 12.5V4h8.5L21 13.5 13.5 21 4 11.5"/>
+  <circle cx="7.5" cy="7.5" r="1.2"/>
+</svg></i><b>Продажа</b><span>показы, покупатели, документы</span></div>
+      <div class="услуга услуга--4"><i class="услуга__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 3h7l5 5v13H7z"/>
+  <path d="M14 3v5h5M10 13h5M10 17h5"/>
+</svg></i><b>Ипотека</b><span>одобрение и сделка в банке</span></div>
+      <span class="точка" style="top: 2%; left: 46%"></span><span class="точка" style="bottom: 12%; left: 40%"></span>
+    </div>
   </div>
 </section>
 <section class="блок блок--боль тёмный второй" id="экран-02" data-тип="боль" data-вёрстка="своя">
@@ -224,23 +243,42 @@
   </div>
 </div>
 </section>
-<section class="блок блок--о-себе тёмный" id="экран-03" data-тип="о-себе" data-вёрстка="своя">
+<section class="блок блок--о-себе светлый" id="экран-03" data-тип="о-себе" data-вёрстка="своя">
 <div class="блок__внутри">
   <div class="разворот">
+    <figure class="фото портрет">
+      <img src="img/olga-za-stolom.webp" width="1600" height="1832" alt="Ольга Ярославцева — риэлтор и ипотечный брокер, Тюмень" loading="lazy">
+      <span class="портрет__плашка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>
+</svg>Покупка · продажа · ипотека</span>
+      <figcaption class="портрет__имя"><span class="портрет__кто">Ольга Ярославцева</span><span class="портрет__роль">Риэлтор · ипотечный брокер</span></figcaption>
+    </figure>
     <div class="рассказ">
       <p class="кикер">Кто будет рядом</p>
-      <h2>Не тороплю и не пугаю — веду по шагам</h2>
-      <p class="лид">Ольга Ярославцева · риэлтор и ипотечный брокер</p>
-      <p>На рынке много риэлторов, которые запугивают и торопят. Я работаю иначе: вы ставите задачу, а я выстраиваю путь к её решению — спокойно, по шагам и без давления</p>
+      <h2>Не тороплю и не пугаю — <em>веду по шагам</em></h2>
+      <p class="лид">На рынке много риэлторов, которые запугивают и торопят. Я работаю иначе</p>
       <ul class="факты">
-        <li>С 2018 года в недвижимости — работаю в Тюмени</li>
-        <li>Семьи с детьми и люди 40+ — чаще всего работаю с ними</li>
-        <li>Переезжаете с Севера — помогу выбрать квартиру за короткий приезд</li>
+        <li class="факт"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="5" width="18" height="16" rx="2"/>
+  <path d="M3 10h18M8 3v4M16 3v4"/>
+</svg><span class="факт__главное">С 2018</span><span class="факт__пояс">в недвижимости, работаю в Тюмени</span></li>
+        <li class="факт"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="9" cy="8" r="3.5"/>
+  <circle cx="17" cy="9" r="2.5"/>
+  <path d="M3 20a6 6 0 0 1 12 0M15 20a4 4 0 0 1 6 0"/>
+</svg><span class="факт__главное">Семьи и 40+</span><span class="факт__пояс">с ними работаю чаще всего</span></li>
+        <li class="факт"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>
+</svg><span class="факт__главное">С Севера</span><span class="факт__пояс">помогу выбрать квартиру за короткий приезд</span></li>
       </ul>
+      <div class="подход">
+        <span class="подход__знак"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 20v-4h4v-4h4v-4h4V4"/>
+  <path d="M4 20h16"/>
+</svg></span>
+        <p>Вы ставите задачу, а я выстраиваю путь к её решению — <em>спокойно, по шагам и без давления</em></p>
+      </div>
     </div>
-    <figure class="фото портрет">
-      <img src="img/olga-portret.webp" width="566" height="708" alt="Ольга Ярославцева — риэлтор и ипотечный брокер, Тюмень" loading="lazy">
-    </figure>
   </div>
 
   <div class="обучение">
@@ -280,144 +318,169 @@
   </div>
 </div>
 </section>
-<section class="блок блок--прайс-лист блок--громко тёмный второй" id="экран-04" data-тип="прайс-лист" data-вёрстка="своя">
+<section class="блок блок--прайс-лист блок--громко тёмный" id="экран-04" data-тип="прайс-лист" data-вёрстка="своя">
 <div class="блок__внутри">
   <div class="шапка-центр">
     <p class="кикер">Стоимость сопровождения</p>
-    <h2>Цена зависит только от суммы сделки</h2>
-    <p class="лид">Первая консультация — бесплатно. Дальше — одна сумма за всё сопровождение</p>
+    <h2>Цена зависит <em>только от суммы сделки</em></h2>
+    <p class="лид">Вид жилья на цену не влияет — новостройка, вторичка, дом или земля считаются одинаково</p>
   </div>
   <div class="цены">
-    <article class="цена-карт">
-      <span class="цена-карт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M4 5h16v11H9l-5 4z"/>
-</svg></span>
-      <h3>Первая консультация</h3>
-      <p class="цена-карт__сумма цена-карт__сумма--слово">бесплатно</p>
-      <p class="пояснение">знакомимся и обсуждаем вашу задачу</p>
-    </article>
-    <article class="цена-карт">
-      <span class="цена-карт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <article class="тариф">
+      <span class="тариф__плитка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>
 </svg></span>
       <h3>Сделка до 5 млн ₽</h3>
-      <p class="цена-карт__сумма">50 000 ₽</p>
-      <p class="пояснение">полное сопровождение</p>
+      <p class="тариф__что">полное сопровождение</p>
+      <p class="тариф__сумма">50 000 ₽</p>
+      <p class="тариф__за">одна сумма за всю сделку</p>
+      <ul>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>от первой консультации до ключей</span></li>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>ипотека входит — искать брокера отдельно не нужно</span></li>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>покупка или продажа</span></li>
+      </ul>
     </article>
-    <article class="цена-карт">
-      <span class="цена-карт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <article class="тариф">
+      <span class="тариф__плитка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <rect x="5" y="11" width="14" height="10" rx="2"/>
   <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
 </svg></span>
       <h3>Сделка от 5 до 10 млн ₽</h3>
-      <p class="цена-карт__сумма">100 000 ₽</p>
-      <p class="пояснение">полное сопровождение</p>
+      <p class="тариф__что">полное сопровождение</p>
+      <p class="тариф__сумма">100 000 ₽</p>
+      <p class="тариф__за">одна сумма за всю сделку</p>
+      <ul>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>от первой консультации до ключей</span></li>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>ипотека входит — искать брокера отдельно не нужно</span></li>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>покупка или продажа</span></li>
+      </ul>
     </article>
-    <article class="цена-карт">
-      <span class="цена-карт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <article class="тариф">
+      <span class="тариф__плитка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
 </svg></span>
       <h3>Сделка более 10 млн ₽</h3>
-      <p class="цена-карт__сумма">2 % от суммы</p>
-      <p class="пояснение">полное сопровождение</p>
+      <p class="тариф__что">полное сопровождение</p>
+      <p class="тариф__сумма">2 %</p>
+      <p class="тариф__за">от суммы сделки</p>
+      <ul>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>от первой консультации до ключей</span></li>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>ипотека входит — искать брокера отдельно не нужно</span></li>
+        <li><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12.5l4.5 4.5L19 7"/>
+</svg><span>покупка или продажа</span></li>
+      </ul>
     </article>
   </div>
-  <p class="под-цифрами">Вид жилья на цену не влияет — новостройка, вторичка, дом или земля считаются одинаково</p>
-  <div class="кнопка-под"><a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Записаться на бесплатную консультацию</a></div>
+  <div class="бесплатно">
+    <span class="бесплатно__плитка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 5h16v11H9l-5 4z"/>
+</svg></span>
+    <div class="бесплатно__текст">
+      <p class="бесплатно__главное">Первая консультация — бесплатно</p>
+      <p class="бесплатно__пояс">Знакомимся и обсуждаем вашу задачу</p>
+    </div>
+    <a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Записаться на консультацию</a>
+  </div>
 </div>
 </section>
-<section class="блок блок--отзывы блок--тихо тёмный" id="экран-05" data-тип="отзывы" data-вёрстка="своя">
+<section class="блок блок--отзывы блок--тихо светлый" id="экран-05" data-тип="отзывы" data-вёрстка="своя">
 <div class="блок__внутри">
   <div class="шапка-центр">
     <p class="кикер">Отзывы на 2ГИС</p>
-    <h2>Что говорят те, кто уже получил ключи</h2>
-    <p class="лид">Все отзывы можно найти на 2ГИС — переписаны без правок смысла</p>
+    <h2>Что говорят те, кто <em>уже получил ключи</em></h2>
+    <p class="лид">Слова клиентов переписаны с 2ГИС без правок смысла.<br><b>С 2021 по 2025 год — все на пять звёзд</b></p>
   </div>
   <div class="отзывы">
-    <figure class="отзыв отзыв--главный">
+    <figure class="отзыв">
+      <figcaption class="кто"><span class="знак" aria-hidden="true"><span>ВТ</span></span><span><span class="кто__имя">Валентина Т.</span><span class="кто__где">2ГИС, июль 2025</span></span></figcaption>
       <span class="метка">новостройка</span>
-      <blockquote class="цитата">«Она помогла мне приобрести в строящемся доме квартиру 2 года назад. И сейчас получили ключи вместе с ней»</blockquote>
-      <figcaption class="подпись"><span class="подпись__имя">Валентина Т.</span><span class="подпись__где">2ГИС, июль 2025</span></figcaption>
+      <blockquote class="цитата">Она помогла мне приобрести в строящемся доме квартиру 2 года назад. <b>И сейчас получили ключи вместе с ней</b></blockquote>
     </figure>
-    <div class="ряд">
-      <figure class="отзыв">
-        <span class="метка">из другого региона</span>
-        <blockquote class="цитата">«Мы из другого региона. Она возила нас по нескольким ЖК, подробно рассказывала в нюансах о каждом, с учётом плюсов и минусов… по доверенности оформила все документы с застройщиком, банком и Росреестром»</blockquote>
-        <figcaption class="подпись"><span class="подпись__имя">Наталья Н.</span><span class="подпись__где">2ГИС, декабрь 2021</span></figcaption>
-      </figure>
-      <figure class="отзыв">
-        <span class="метка">продажа и покупка</span>
-        <blockquote class="цитата">«Очень грамотный и профессиональный специалист, быстро и качественно оформила несколько сделок по продаже и покупке недвижимости»</blockquote>
-        <figcaption class="подпись"><span class="подпись__имя">Валерий З.</span><span class="подпись__где">2ГИС, май 2021</span></figcaption>
-      </figure>
-      <figure class="отзыв">
-        <span class="метка">покупка</span>
-        <blockquote class="цитата">«Хочется отметить индивидуальный подход к каждому клиенту, благодаря этому мы чувствовали себя "в надежных руках"»</blockquote>
-        <figcaption class="подпись"><span class="подпись__имя">Николай М.</span><span class="подпись__где">2ГИС, май 2021</span></figcaption>
-      </figure>
-      <figure class="отзыв">
-        <span class="метка">покупка квартиры</span>
-        <blockquote class="цитата">«Благодаря ей мы выбрали квартиру мечты!»</blockquote>
-        <figcaption class="подпись"><span class="подпись__имя">Galina M.</span><span class="подпись__где">2ГИС, ноябрь 2022</span></figcaption>
-      </figure>
-    </div>
+    <figure class="отзыв">
+      <figcaption class="кто"><span class="знак" aria-hidden="true"><span>НН</span></span><span><span class="кто__имя">Наталья Н.</span><span class="кто__где">2ГИС, декабрь 2021</span></span></figcaption>
+      <span class="метка">из другого региона</span>
+      <blockquote class="цитата">Мы из другого региона. Она возила нас по нескольким ЖК, подробно рассказывала в нюансах о каждом, с учётом плюсов и минусов… <b>по доверенности оформила все документы с застройщиком, банком и Росреестром</b></blockquote>
+    </figure>
+    <figure class="отзыв">
+      <figcaption class="кто"><span class="знак" aria-hidden="true"><span>ВЗ</span></span><span><span class="кто__имя">Валерий З.</span><span class="кто__где">2ГИС, май 2021</span></span></figcaption>
+      <span class="метка">продажа и покупка</span>
+      <blockquote class="цитата">Очень грамотный и профессиональный специалист, <b>быстро и качественно оформила несколько сделок</b> по продаже и покупке недвижимости</blockquote>
+    </figure>
+    <figure class="отзыв">
+      <figcaption class="кто"><span class="знак" aria-hidden="true"><span>НМ</span></span><span><span class="кто__имя">Николай М.</span><span class="кто__где">2ГИС, май 2021</span></span></figcaption>
+      <span class="метка">покупка</span>
+      <blockquote class="цитата">Хочется отметить индивидуальный подход к каждому клиенту, благодаря этому <b>мы чувствовали себя «в надёжных руках»</b></blockquote>
+    </figure>
+    <figure class="отзыв">
+      <figcaption class="кто"><span class="знак" aria-hidden="true"><span>GM</span></span><span><span class="кто__имя">Galina M.</span><span class="кто__где">2ГИС, ноябрь 2022</span></span></figcaption>
+      <span class="метка">покупка квартиры</span>
+      <blockquote class="цитата">Благодаря ей <b>мы выбрали квартиру мечты!</b></blockquote>
+    </figure>
   </div>
-  <p class="итог">Отзывы на 2ГИС с 2021 по 2025 год, все на пять звёзд</p>
 </div>
 </section>
-<section class="блок блок--вопросы-ответы блок--тихо тёмный второй" id="экран-06" data-тип="вопросы-ответы" data-вёрстка="своя">
+<section class="блок блок--вопросы-ответы блок--тихо тёмный" id="экран-06" data-тип="вопросы-ответы" data-вёрстка="своя">
 <div class="блок__внутри">
-  <div class="шапка-лево">
+  <div class="шапка-центр">
     <p class="кикер">Частые вопросы</p>
-    <h2>О чём спрашивают перед первой встречей</h2>
+    <h2>О чём спрашивают <em>перед первой встречей</em></h2>
     <p class="лид">Отвечаю честно — даже когда ответ «это решаю не&nbsp;я»</p>
   </div>
-  <div class="тело">
-    <div class="вопросы">
+  <div class="вопросы">
       <details class="вопрос" open>
-        <summary>Сколько стоит ваше сопровождение?</summary>
+        <summary><span class="вопрос__номер" aria-hidden="true">01</span><span class="вопрос__текст">Сколько стоит ваше сопровождение?</span></summary>
         <p>Цена зависит только от суммы сделки и не меняется от вида жилья. Первая консультация — бесплатно</p>
       </details>
       <details class="вопрос">
-        <summary>Вы будете меня торопить?</summary>
+        <summary><span class="вопрос__номер" aria-hidden="true">02</span><span class="вопрос__текст">Вы будете меня торопить?</span></summary>
         <p>Нет. Вы ставите задачу, а я выстраиваю путь к её решению — спокойно, по шагам и без давления</p>
       </details>
       <details class="вопрос">
-        <summary>Мне точно одобрят ипотеку?</summary>
+        <summary><span class="вопрос__номер" aria-hidden="true">03</span><span class="вопрос__текст">Мне точно одобрят ипотеку?</span></summary>
         <p>Решение принимает банк, и обещать его никто честно не может. Я помогаю подобрать квартиру по цене, на которую реально набрать деньги, и посильную ипотеку</p>
       </details>
       <details class="вопрос">
-        <summary>Нужно ли отдельно искать ипотечного брокера?</summary>
+        <summary><span class="вопрос__номер" aria-hidden="true">04</span><span class="вопрос__текст">Нужно ли отдельно искать ипотечного брокера?</span></summary>
         <p>Нет. Ипотека входит в сопровождение, я подбираю её сама</p>
       </details>
       <details class="вопрос">
-        <summary>Я живу на Севере — как купить квартиру в Тюмени?</summary>
+        <summary><span class="вопрос__номер" aria-hidden="true">05</span><span class="вопрос__текст">Я живу на Севере — как купить квартиру в Тюмени?</span></summary>
         <p>Выбираем квартиру за ваш короткий приезд, а документы я оформляю по доверенности</p>
       </details>
       <details class="вопрос">
-        <summary>Вы работаете только с квартирами?</summary>
+        <summary><span class="вопрос__номер" aria-hidden="true">06</span><span class="вопрос__текст">Вы работаете только с квартирами?</span></summary>
         <p>Нет. Новостройки, вторичка, дома и земля — покупка и продажа, всё на равных</p>
       </details>
-    </div>
-    <aside class="вопрос-карточка">
-      <span class="вопрос-значок"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M4 5h16v11H9l-5 4z"/>
-</svg></span>
-      <h3>Не нашли свой вопрос?</h3>
-      <p>Напишите в MAX — первая консультация бесплатно</p>
-      <div class="кнопка-под"><a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Задать вопрос в MAX</a></div>
-    </aside>
   </div>
+  <p class="приглашение">Не нашли свой вопрос? Напишите в MAX — <em>первая консультация бесплатно</em></p>
+  <div class="кнопка-под"><a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Задать вопрос в MAX</a></div>
 </div>
 </section>
-<section class="блок блок--контакты блок--тихо тёмный" id="экран-07" data-тип="контакты" data-вёрстка="своя">
+<section class="блок блок--контакты блок--тихо светлый" id="экран-07" data-тип="контакты" data-вёрстка="своя">
 <div class="блок__внутри">
   <div class="шапка-лево">
     <p class="кикер">Контакты</p>
-    <h2>Напишите, с чего хотите начать</h2>
+    <h2>Напишите, <em>с чего хотите начать</em></h2>
     <p class="лид">Первая консультация бесплатно. Пишите туда, где вам удобно</p>
   </div>
-  <figure class="фото вид-города"><img src="img/tyumen-vecher.webp" width="1600" height="900" loading="lazy" alt="Вечерняя Тюмень: набережная Туры, мост в огнях и старый центр на закате"></figure>
+  <figure class="фото вид-города"><img src="img/tyumen-vecher.webp" width="1600" height="900" loading="lazy" alt="Вечерний город у реки: набережная и мост в огнях на закате — иллюстрация"></figure>
   <div class="тело">
     <div class="способы">
       <a class="способ способ--главный" href="https://max.ru/id890307099239_biz" target="_blank" rel="noopener">
