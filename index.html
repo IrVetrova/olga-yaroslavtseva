@@ -92,6 +92,10 @@
 </head>
 <body class="с-липкой-кнопкой">
 <section class="блок блок--первый-экран первый-экран--разворот тёмный фон--пятна сторона--слева" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото">
+<style>
+  /* «спешки» на бордовой обложке: красный акцент почти сливался с фоном (1,9), берём тёплый светлый */
+  #экран-1.тёмный .акцент { color: var(--цвет-тёплый-мягкий); }
+</style>
   <header class="шапка">
     <a class="шапка__лого" href="#">Ольга Ярославцева · риэлтор</a>
     <span class="шапка__лиц"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -234,8 +238,8 @@
         <li>Переезжаете с Севера — помогу выбрать квартиру за короткий приезд</li>
       </ul>
     </div>
-    <figure class="портрет">
-      <div class="заглушка-картинки">портрет Ольги</div>
+    <figure class="фото портрет">
+      <img src="img/olga-portret.webp" width="566" height="708" alt="Ольга Ярославцева — риэлтор и ипотечный брокер, Тюмень" loading="lazy">
     </figure>
   </div>
 
@@ -358,7 +362,7 @@
       </figure>
     </div>
   </div>
-  <p class="итог">Шесть отзывов на 2ГИС с 2021 по 2025 год, все на пять звёзд</p>
+  <p class="итог">Отзывы на 2ГИС с 2021 по 2025 год, все на пять звёзд</p>
 </div>
 </section>
 <section class="блок блок--вопросы-ответы блок--тихо тёмный второй" id="экран-06" data-тип="вопросы-ответы" data-вёрстка="своя">
@@ -396,13 +400,87 @@
       </details>
     </div>
     <aside class="вопрос-карточка">
-      <span class="вопрос-карточка__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <span class="вопрос-значок"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M4 5h16v11H9l-5 4z"/>
 </svg></span>
       <h3>Не нашли свой вопрос?</h3>
       <p>Напишите в MAX — первая консультация бесплатно</p>
       <div class="кнопка-под"><a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Задать вопрос в MAX</a></div>
     </aside>
+  </div>
+</div>
+</section>
+<section class="блок блок--контакты блок--тихо тёмный" id="экран-07" data-тип="контакты" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="шапка-лево">
+    <p class="кикер">Контакты</p>
+    <h2>Напишите, с чего хотите начать</h2>
+    <p class="лид">Первая консультация бесплатно. Пишите туда, где вам удобно</p>
+  </div>
+  <figure class="фото вид-города"><img src="img/tyumen-vecher.webp" width="1600" height="900" loading="lazy" alt="Вечерняя Тюмень: набережная Туры, мост в огнях и старый центр на закате"></figure>
+  <div class="тело">
+    <div class="способы">
+      <a class="способ способ--главный" href="https://max.ru/id890307099239_biz" target="_blank" rel="noopener">
+        <span class="способ__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 5h16v11H9l-5 4z"/>
+</svg></span>
+        <span class="способ__текст"><span class="способ__имя">MAX</span><span class="способ__адрес">max.ru/id890307099239_biz</span></span>
+      </a>
+      <a class="способ" href="https://t.me/Sever_olka" target="_blank" rel="noopener">
+        <span class="способ__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 4L3 11l6 2 2 6 3-4 5 3z"/>
+  <path d="M9 13l10-8"/>
+</svg></span>
+        <span class="способ__текст"><span class="способ__имя">Telegram</span><span class="способ__адрес">@Sever_olka</span></span>
+      </a>
+      <a class="способ" href="https://vk.ru/nedvigka_tyumen" target="_blank" rel="noopener">
+        <span class="способ__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="9" cy="8" r="3.5"/>
+  <circle cx="17" cy="9" r="2.5"/>
+  <path d="M3 20a6 6 0 0 1 12 0M15 20a4 4 0 0 1 6 0"/>
+</svg></span>
+        <span class="способ__текст"><span class="способ__имя">ВКонтакте</span><span class="способ__адрес">vk.ru/nedvigka_tyumen</span></span>
+      </a>
+    </div>
+    <aside class="приглашение">
+      <h3>Бесплатная консультация</h3>
+      <p>Расскажите о своей задаче: что хотите купить или продать и сколько денег есть. Подскажу, с чего начать</p>
+      <div class="кнопка-под"><a class="кнопка кнопка--главная" href="https://max.ru/id890307099239_biz">Написать в MAX</a></div>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="блок блок--подвал блок--тихо тёмный второй" id="экран-08" data-тип="подвал" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="сетка">
+    <div>
+      <span class="знак">Ольга Ярославцева · риэлтор</span>
+      <p class="подпись">Ипотечный брокер · Тюмень</p>
+    </div>
+    <div>
+      <h4>Разделы</h4>
+      <div class="ссылки подвал__ссылки подвал__разделы">
+        <a href="#экран-02">С чем помогаю</a>
+        <a href="#экран-03">Кто будет рядом</a>
+        <a href="#экран-04">Стоимость сопровождения</a>
+        <a href="#экран-05">Отзывы на 2ГИС</a>
+        <a href="#экран-06">Частые вопросы</a>
+        <a href="#экран-07">Контакты</a>
+      </div>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <div class="ссылки подвал__ссылки">
+        <a href="https://max.ru/id890307099239_biz" target="_blank" rel="noopener">MAX</a>
+        <a href="https://t.me/Sever_olka" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://vk.ru/nedvigka_tyumen" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="mailto:severyanochka200@rambler.ru">severyanochka200@rambler.ru</a>
+      </div>
+    </div>
+  </div>
+  <div class="низ">
+    <span>ИП Ярославцева Ольга Валерьевна · ОГРНИП 325723200126383 от 19.12.2025 · ИНН 890307099239 · г. Тюмень</span>
+    <span>© 2026</span>
   </div>
 </div>
 </section>
