@@ -1785,7 +1785,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (max-width: 899px) {
     #экран-01 .шапка { padding: 14px 16px; gap: 10px; }
     #экран-01 .афиша { grid-template-columns: minmax(0, 1fr); padding: 34px 16px 0; }
-    #экран-01 .кикер-афиши { font-size: 15px; letter-spacing: .04em; }
+    #экран-01 .кикер-афиши { font-size: 16px; letter-spacing: .02em; }
     #экран-01 .цифры-афиши { margin: 24px 0 26px; }
     #экран-01 .шапка { flex-direction: row; align-items: center; }
     #экран-01 .шапка__лого { font-size: 15px; }
@@ -2136,7 +2136,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-08 .ссылки a:hover { border-bottom-color: currentColor; }
   #экран-08 .низ { display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; margin-top: clamp(32px, 4vw, 56px);
       padding-top: clamp(18px, 2vw, 26px); border-top: 2px solid; font-size: var(--кегль-мелкий); line-height: 1.5; }
-  #экран-08 .низ span { margin: 0; }
+  #экран-08 .низ span { margin: 0; min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
 
   #экран-08 .знак { color: var(--цвет-тёмный-текст); }
   #экран-08 .подпись, #экран-08 .ссылки a { color: var(--цвет-тёплый-мягкий); }
@@ -2150,5 +2150,5 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   }
   @media (max-width: 599px) {
     #экран-08 .сетка { grid-template-columns: 1fr; }
-    #экран-08 .низ { flex-direction: column; }
+    #экран-08 .низ { flex-direction: column; flex-wrap: nowrap; align-items: stretch; }
   }
