@@ -127,6 +127,7 @@ body.с-липкой-кнопкой:has(> section.блок:last-of-type.тёмн
 
 
 
+
 @keyframes пульс-кнопки {
   0%   { box-shadow: var(--тень-глубокая), 0 0 0 0 color-mix(in srgb, var(--цвет-акцент) 45%, transparent); }
   70%  { box-shadow: var(--тень-глубокая), 0 0 0 .8em color-mix(in srgb, var(--цвет-акцент) 0%, transparent); }
@@ -134,25 +135,33 @@ body.с-липкой-кнопкой:has(> section.блок:last-of-type.тёмн
 }
 
 
+
 @keyframes вращение { to { rotate: 360deg; } }
+
 
 
 @keyframes парение { 50% { transform: translateY(-.5em); } }
 
 
+
 @keyframes дрейф { 0% { translate: 0 0; scale: 1; } 50% { translate: 4% -5%; scale: 1.08; } 100% { translate: -3% 4%; scale: .96; } }
+
 
 
 @keyframes мерцание { 50% { opacity: .3; } }
 
 
+
 @keyframes дыхание { 50% { transform: translateY(-.5em); } }
+
 
 
 @keyframes бег { to { transform: translateX(-50%); } }
 
 
+
 @keyframes зум { to { scale: 1.06; } }
+
 
 
 @keyframes дрейф-ленты { to { transform: translateX(-50%); } }
@@ -214,6 +223,7 @@ body.с-липкой-кнопкой:has(> section.блок:last-of-type.тёмн
 .тёмный.блок--подвал h4{ color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 85%, transparent); }
 .тёмный .подвал__ссылки a:hover{ color: var(--тёплый-ключа, var(--цвет-акцент-тёмный)); }
 @media (min-width: 900px){.блок--подвал{ padding-block: 3.25rem 1.75rem; }}
+
 
 
 
@@ -318,6 +328,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-01 ~ .липкая-кнопка{ background: color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent); border-top-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, var(--цвет-тёмный-фон)); }
 #экран-01 ~ .липкая-кнопка .кнопка{ border-radius: 999px; background: var(--цвет-акцент-яркий); border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
 @supports (animation-timeline: scroll()){#экран-01 ~ .липкая-кнопка{ animation: экран-01-липкая linear both; animation-timeline: scroll(root); animation-range: 0 1200px; }}
+
 
 
   @keyframes экран-01-липкая { 0%, 80% { transform: translateY(110%); } 100% { transform: none; } }
@@ -515,6 +526,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-05 .отзыв:hover .знак span{ transform: scale(1.08); }
 
 
+
   @keyframes экран05-кольцо { to { transform: rotate(360deg); } }
 #экран-05 .кто__имя{ display: block; font: 800 var(--кегль-лид)/1.2 var(--шрифт-заголовков); }
 #экран-05 .кто__где{ display: block; font-size: var(--кегль-мелкий); color: var(--цвет-текст-мягкий); }
@@ -631,5 +643,6 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-08 .сетка > :first-child{ grid-column: 1 / -1; }}
 @media (max-width: 599px){#экран-08 .сетка{ grid-template-columns: 1fr; }
 #экран-08 .низ{ flex-direction: column; flex-wrap: nowrap; align-items: stretch; }}
+
 
 
