@@ -137,31 +137,42 @@ body.с-липкой-кнопкой:has(> section.блок:last-of-type.тёмн
 .шапка__лиц{ max-width: none; }}
 
 
+
 @keyframes пульс-кнопки {
   0%   { box-shadow: var(--тень-глубокая), 0 0 0 0 color-mix(in srgb, var(--цвет-акцент) 45%, transparent); }
   70%  { box-shadow: var(--тень-глубокая), 0 0 0 .8em color-mix(in srgb, var(--цвет-акцент) 0%, transparent); }
   100% { box-shadow: var(--тень-глубокая), 0 0 0 0 color-mix(in srgb, var(--цвет-акцент) 0%, transparent); }
 }
 
+
 @keyframes зов-кнопки {
   0%, 100% { transform: scale(1); box-shadow: var(--объём), 0 0 .5em 0 color-mix(in srgb, var(--заливка) 35%, transparent); }
   50% { transform: scale(1.04); box-shadow: var(--объём), 0 0 2.1em .375em color-mix(in srgb, var(--заливка) 70%, transparent); } }
 
+
 @keyframes блик-кнопки { 0% { transform: translateX(-160%) skewX(-18deg); } 55%, 100% { transform: translateX(330%) skewX(-18deg); } }
+
 
 @keyframes вращение { to { rotate: 360deg; } }
 
+
 @keyframes парение { 50% { transform: translateY(-.5em); } }
+
 
 @keyframes дрейф { 0% { translate: 0 0; scale: 1; } 50% { translate: 4% -5%; scale: 1.08; } 100% { translate: -3% 4%; scale: .96; } }
 
+
 @keyframes мерцание { 50% { opacity: .3; } }
+
 
 @keyframes дыхание { 50% { transform: translateY(-.5em); } }
 
+
 @keyframes бег { to { transform: translateX(-50%); } }
 
+
 @keyframes зум { to { scale: 1.06; } }
+
 
 @keyframes дрейф-ленты { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){.кнопка{ transition: none; }
@@ -223,6 +234,7 @@ body.с-липкой-кнопкой:has(> section.блок:last-of-type.тёмн
 @media (min-width: 900px){.блок--подвал{ padding-block: 3.25rem 1.75rem; }}
 
 
+
 @keyframes зум-финала { from { scale: 1.04; } to { scale: 1; } }
 .блок--первый-экран{ padding-top: 0; padding-bottom: calc(var(--отступ-секции) * .7); }
 .блок--первый-экран.светлый[data-ключ-макета="тёмная"]{
@@ -265,7 +277,13 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
         radial-gradient(60% 70% at 85% 10%, color-mix(in srgb, var(--цвет-акцент) 38%, transparent), transparent 70%),
         radial-gradient(50% 60% at 0% 100%, color-mix(in srgb, var(--цвет-акцент) 22%, transparent), transparent 70%),
         linear-gradient(160deg, var(--ночь-2), var(--ночь) 60%);
-      color: var(--белый); position: relative; overflow: hidden; padding: 0 0 clamp(48px, 6vw, 90px); }
+      color: var(--белый); position: relative; overflow: hidden; padding: 0 0 clamp(32px, 4vw, 60px); }
+#экран-01{ --кегль-h1: clamp(38px, 5.4vw, 74px);
+      --кегль-h2: clamp(20px, 2.1vw, 28px);
+      --кегль-лид: clamp(18px, 1.6vw, 22px);
+      --кегль-цифра: clamp(28px, 2.8vw, 38px);
+      --кегль-кикер: 15px;
+      --радиус-малый: 2px; --радиус-карточки: 14px; --радиус-модуля: 10px; }
 #экран-01::before{ content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
       background-image: linear-gradient(color-mix(in srgb, var(--белый) 4%, transparent) 1px, transparent 1px),
                         linear-gradient(90deg, color-mix(in srgb, var(--белый) 4%, transparent) 1px, transparent 1px);
@@ -275,81 +293,82 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
       max-width: var(--ширина); margin: 0 auto; padding: 18px 20px; border-bottom: 1px solid var(--ночь-линия); }
 #экран-01 .шапка__лого{ font: 800 17px/1.2 var(--шрифт-заголовков); color: var(--белый); text-decoration: none; }
 #экран-01 .шапка__лого b{ color: var(--бордо-свет); font-weight: 800; }
-#экран-01 .шапка__лиц{ display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--серый); }
+#экран-01 .шапка__лиц{ display: inline-flex; align-items: center; gap: 8px; font-size: var(--кегль-мелкий); color: var(--серый); }
 #экран-01 .шапка__лиц .иконка{ width: 16px; height: 16px; color: var(--золото); }
 #экран-01 .афиша{ display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px);
-      align-items: center; max-width: var(--ширина); margin: 0 auto; padding: clamp(40px, 6vw, 88px) 20px 0; }
+      align-items: center; max-width: var(--ширина); margin: 0 auto; padding: clamp(28px, 3.4vw, 52px) 20px 0; }
 #экран-01 .афиша__текст > *{ margin: 0; }
 #экран-01 .кикер-афиши{ display: flex; align-items: center; gap: 12px; font: 800 16px/1.3 var(--шрифт-заголовков);
       letter-spacing: .18em; text-transform: uppercase; color: var(--золото); margin-bottom: 18px; }
 #экран-01 .кикер-афиши::before{ content: ""; width: 26px; height: 2px; background: var(--бордо-свет); flex: none; }
 #экран-01 h1{ margin: 0; color: var(--белый); text-wrap: balance; }
-#экран-01 .h1-верх{ display: block; font-size: clamp(20px, 2.1vw, 28px); font-weight: 700; line-height: 1.2; color: var(--серый); margin-bottom: 10px; }
-#экран-01 .h1-крупно{ display: block; font-size: clamp(38px, 5.4vw, 74px); font-weight: 900; line-height: .98;
+#экран-01 .h1-верх{ display: block; font-size: var(--кегль-h2); font-weight: 700; line-height: 1.2; color: var(--серый); margin-bottom: 10px; }
+#экран-01 .h1-крупно{ display: block; font-size: var(--кегль-h1); font-weight: 900; line-height: .98;
       text-transform: uppercase; letter-spacing: -.01em; }
 #экран-01 .h1-крупно em{ font-style: normal; color: var(--бордо-свет); }
-#экран-01 .черта{ width: 64px; height: 4px; border-radius: 2px; margin: 24px 0 22px;
+#экран-01 .черта{ width: 64px; height: 4px; border-radius: var(--радиус-малый); margin: 24px 0 22px;
       background: linear-gradient(90deg, var(--бордо-свет), var(--золото)); }
-#экран-01 .лид-афиши{ font: 700 clamp(18px, 1.6vw, 22px)/1.4 var(--шрифт-заголовков); color: color-mix(in srgb, var(--цвет-тёмный-текст) 92%, var(--цвет-тёмный-фон)); max-width: 34rem; }
+#экран-01 .лид-афиши{ font: 700 var(--кегль-лид)/1.4 var(--шрифт-заголовков); color: color-mix(in srgb, var(--цвет-тёмный-текст) 92%, var(--цвет-тёмный-фон)); max-width: 34rem; }
 #экран-01 .лид-афиши em{ font-style: normal; color: var(--бордо-свет); }
 #экран-01 .цифры-афиши{ display: flex; flex-wrap: wrap; gap: 0; margin: 30px 0 32px; padding: 0; list-style: none; }
 #экран-01 .цифры-афиши li{ padding: 0 22px; border-left: 1px solid var(--ночь-линия); }
 #экран-01 .цифры-афиши li:first-child{ padding-left: 0; border-left: 0; }
-#экран-01 .цифры-афиши b{ display: block; font: 900 clamp(28px, 2.8vw, 38px)/1.05 var(--шрифт-заголовков); color: var(--белый); white-space: nowrap; }
+#экран-01 .цифры-афиши b{ display: block; font: 900 var(--кегль-цифра)/1.05 var(--шрифт-заголовков); color: var(--белый); white-space: nowrap; }
 #экран-01 .цифры-афиши li:last-child b{ color: var(--бордо-свет); }
-#экран-01 .цифры-афиши span{ display: block; margin-top: 6px; font-size: 14px; line-height: 1.35; color: var(--серый); }
+#экран-01 .цифры-афиши span{ display: block; margin-top: 6px; font-size: var(--кегль-мелкий); line-height: 1.35; color: var(--серый); }
 #экран-01 .кнопки-афиши{ display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-#экран-01 .кнопки-афиши .кнопка{ border-radius: 999px; padding: 18px 34px; font-weight: 800; }
+#экран-01 .кнопки-афиши .кнопка{ border-radius: var(--кнопка-радиус); padding: 18px 34px; font-weight: 800; }
 #экран-01 .кнопки-афиши > :first-child .кнопка,#экран-01 .кнопки-афиши > .кнопка:first-child{
       background: color-mix(in srgb, var(--бордо) 84%, var(--белый)); color: var(--белый); border-color: color-mix(in srgb, var(--бордо) 84%, var(--белый));
-      box-shadow: 0 14px 40px color-mix(in srgb, var(--бордо) 45%, transparent); }
+       }
 #экран-01 .кнопка-контур{ display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 16px 30px;
-      border: 1px solid color-mix(in srgb, var(--белый) 28%, transparent); border-radius: 999px; color: var(--белый); text-decoration: none;
+      border: 1px solid color-mix(in srgb, var(--белый) 28%, transparent); border-radius: var(--кнопка-радиус); color: var(--белый); text-decoration: none;
       font: 700 16px/1.2 var(--шрифт-заголовков); transition: border-color var(--длительность) var(--плавность); }
 #экран-01 .кнопка-контур:hover{ border-color: var(--белый); }
 #экран-01 .пилюля{ display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 12px 20px;
-      border: 1px solid var(--ночь-линия); border-radius: 999px; background: color-mix(in srgb, var(--ночь-карта) 70%, transparent);
-      font-size: 15px; color: var(--серый); }
+      border: 1px solid var(--ночь-линия); border-radius: var(--кнопка-радиус); background: color-mix(in srgb, var(--ночь-карта) 70%, transparent);
+      font-size: var(--кегль-кикер); color: var(--серый); }
 #экран-01 .пилюля b{ color: var(--белый); }
 #экран-01 .пилюля .иконка{ width: 18px; height: 18px; color: var(--золото); }
 #экран-01 .сцена{ position: relative; padding: 36px 40px 40px; }
 #экран-01 .сцена::before{ content: ""; position: absolute; inset: 8% 12%; border-radius: 50%;
       border: 1px dashed color-mix(in srgb, var(--белый) 12%, transparent); }
-#экран-01 .первый-экран__картинка{ position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden;
+#экран-01 .первый-экран__картинка{ position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: var(--радиус-плитки); overflow: hidden;
       border: 1px solid var(--ночь-линия); box-shadow: var(--тень-плиты); }
-#экран-01 .первый-экран__картинка img{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+#экран-01 .первый-экран__картинка img{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block;
+      border-radius: var(--радиус-плитки); }
 #экран-01 .первый-экран__картинка::after{ content: ""; position: absolute; inset: auto 0 0; height: 30%;
       background: linear-gradient(to top, color-mix(in srgb, var(--ночь) 70%, transparent), transparent); }
 #экран-01 .услуга{ position: absolute; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: center;
-      width: 230px; padding: 14px 16px; border-radius: 14px; background: color-mix(in srgb, var(--ночь-карта) 92%, transparent);
+      width: 230px; padding: 14px 16px; border-radius: var(--радиус-карточки); background: color-mix(in srgb, var(--ночь-карта) 92%, transparent);
       border: 1px solid var(--ночь-линия); box-shadow: var(--тень-глубокая); backdrop-filter: blur(6px); }
-#экран-01 .услуга__икон{ display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px;
+#экран-01 .услуга__икон{ display: grid; place-items: center; width: 38px; height: 38px; border-radius: var(--радиус-модуля);
       background: color-mix(in srgb, var(--бордо) 22%, transparent); border: 1px solid color-mix(in srgb, var(--бордо-свет) 40%, transparent); }
 #экран-01 .услуга__икон .иконка{ width: 20px; height: 20px; color: var(--золото); }
 #экран-01 .услуга b{ font: 800 15px/1.2 var(--шрифт-заголовков); color: var(--белый); }
-#экран-01 .услуга span{ grid-column: 1 / -1; font-size: 13px; line-height: 1.35; color: var(--серый); }
+#экран-01 .услуга span{ grid-column: 1 / -1; font-size: var(--кегль-мелкий); line-height: 1.35; color: var(--серый); }
 #экран-01 .услуга--1{ top: 13%; left: -30px; }
 #экран-01 .услуга--2{ top: 4%; right: -34px; }
 #экран-01 .услуга--3{ bottom: 18%; left: -40px; }
 #экран-01 .услуга--4{ bottom: 5%; right: -10px; }
 #экран-01 .точка{ position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--бордо-свет);
-      box-shadow: 0 0 14px var(--бордо-свет); }
+      filter: drop-shadow(0 0 7px var(--бордо-свет)); }
 #экран-01 ~ .липкая-кнопка{ background: color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent); border-top-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, var(--цвет-тёмный-фон)); }
-#экран-01 ~ .липкая-кнопка .кнопка{ border-radius: 999px; background: var(--цвет-акцент-яркий); border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
+#экран-01 ~ .липкая-кнопка .кнопка{ border-radius: var(--кнопка-радиус); background: var(--цвет-акцент-яркий); border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
 @supports (animation-timeline: scroll()){#экран-01 ~ .липкая-кнопка{ animation: экран-01-липкая linear both; animation-timeline: scroll(root); animation-range: 0 1200px; }}
+
 
   @keyframes экран-01-липкая { 0%, 80% { transform: translateY(110%); } 100% { transform: none; } }
 @media (max-width: 899px){#экран-01 .шапка{ padding: 14px 16px; gap: 10px; }
 #экран-01 .афиша{ grid-template-columns: minmax(0, 1fr); padding: 34px 16px 0; }
-#экран-01 .кикер-афиши{ font-size: 16px; letter-spacing: .02em; }
+#экран-01 .кикер-афиши{ letter-spacing: .02em; }
 #экран-01 .цифры-афиши{ margin: 24px 0 26px; }
 #экран-01 .шапка{ flex-direction: row; align-items: center; }
-#экран-01 .шапка__лого{ font-size: 15px; }
+#экран-01 .шапка__лого{ font-size: var(--кегль-кикер); }
 #экран-01 .полн-шапка{ display: none; }
 #экран-01 .цифры-афиши{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 #экран-01 .цифры-афиши li{ padding: 0 10px; }
-#экран-01 .цифры-афиши b{ font-size: 24px; }
-#экран-01 .цифры-афиши span{ font-size: 13px; }
+#экран-01{ --кегль-цифра: 24px; }
 #экран-01 .кнопки-афиши{ flex-direction: column; align-items: stretch; }
 #экран-01 .кнопки-афиши .кнопка,#экран-01 .кнопка-контур{ width: 100%; justify-content: center; }
 #экран-01 .пилюля{ display: flex; justify-content: center; }
@@ -368,42 +387,49 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-01 .пилюля{ order: 7; margin: 0 0 22px; }
 #экран-01 .услуга{ order: 8; margin-bottom: 10px; }
 #экран-01 .услуга{ position: relative; inset: auto; width: auto; padding: 12px; grid-template-columns: 1fr; }
-#экран-01 .услуга b{ font-size: 14px; }}
-@media (min-width: 900px){#экран-01{ padding-bottom: max(20px, calc(clamp(48px, 6vw, 90px) - var(--недостаёт, 0px) * .2)); }
-#экран-01 .афиша{ padding-top: max(18px, calc(clamp(40px, 6vw, 88px) - var(--недостаёт, 0px) * .2)); }
+#экран-01 .услуга b{ font-size: var(--кегль-мелкий); }}
+@media (min-width: 900px){#экран-01{ --недостаёт: clamp(0rem, 64rem - 100vh, 18.75rem);
+        padding-bottom: max(20px, calc(clamp(32px, 4vw, 60px) - var(--недостаёт, 0px) * .2));
+
+        --кегль-h1: max(32px, calc(clamp(38px, 5.4vw, 74px) - var(--недостаёт, 0px) * .055));
+        --кегль-h2: max(19px, calc(clamp(20px, 2.1vw, 28px) - var(--недостаёт, 0px) * .02));
+        --кегль-лид: max(17px, calc(clamp(18px, 1.6vw, 22px) - var(--недостаёт, 0px) * .012));
+        --кегль-цифра: max(26px, calc(clamp(28px, 2.8vw, 38px) - var(--недостаёт, 0px) * .03)); }
+@supports (height: 100svh){#экран-01{ --недостаёт: clamp(0rem, 64rem - 100svh, 18.75rem); }}
+#экран-01 .афиша{ padding-top: max(16px, calc(clamp(28px, 3.4vw, 52px) - var(--недостаёт, 0px) * .2)); }
 #экран-01 .кикер-афиши{ margin-bottom: max(8px, calc(18px - var(--недостаёт, 0px) * .04)); }
-#экран-01 .h1-верх{ font-size: max(19px, calc(clamp(20px, 2.1vw, 28px) - var(--недостаёт, 0px) * .02));
-        margin-bottom: max(4px, calc(10px - var(--недостаёт, 0px) * .02)); }
-#экран-01 .h1-крупно{ font-size: max(32px, calc(clamp(38px, 5.4vw, 74px) - var(--недостаёт, 0px) * .055)); }
+#экран-01 .h1-верх{ margin-bottom: max(4px, calc(10px - var(--недостаёт, 0px) * .02)); }
 #экран-01 .черта{ margin: max(10px, calc(24px - var(--недостаёт, 0px) * .05)) 0 max(10px, calc(22px - var(--недостаёт, 0px) * .04)); }
-#экран-01 .лид-афиши{ font-size: max(17px, calc(clamp(18px, 1.6vw, 22px) - var(--недостаёт, 0px) * .012)); }
 #экран-01 .цифры-афиши{ margin: max(14px, calc(30px - var(--недостаёт, 0px) * .055)) 0 max(16px, calc(32px - var(--недостаёт, 0px) * .055)); }
-#экран-01 .цифры-афиши b{ font-size: max(26px, calc(clamp(28px, 2.8vw, 38px) - var(--недостаёт, 0px) * .03)); }
 #экран-01 .кнопки-афиши .кнопка{ padding: max(13px, calc(18px - var(--недостаёт, 0px) * .017)) 34px; }
 #экран-01 .пилюля{ margin-top: max(10px, calc(18px - var(--недостаёт, 0px) * .027));
         padding: max(9px, calc(12px - var(--недостаёт, 0px) * .01)) 20px; }
 #экран-01 .сцена{ padding: max(12px, calc(36px - var(--недостаёт, 0px) * .08)) 40px max(14px, calc(40px - var(--недостаёт, 0px) * .087)); }
 #экран-01 .первый-экран__картинка{ max-height: calc(100vh - 14rem); }
 @supports (height: 100svh){#экран-01 .первый-экран__картинка{ max-height: calc(100svh - 14rem); }}}
-@media (max-width: 899px){#экран-01 .шапка{ padding: max(9px, calc(14px - var(--недостаёт, 0px) * .017)) 16px; }
+@media (max-width: 899px){#экран-01{ --кегль-h1: max(30px, calc(38px - var(--недостаёт, 0px) * .03));
+        --кегль-h2: max(16px, calc(20px - var(--недостаёт, 0px) * .014));
+        --кегль-лид: max(16px, calc(18px - var(--недостаёт, 0px) * .008)); }
+#экран-01 .шапка{ padding: max(9px, calc(14px - var(--недостаёт, 0px) * .017)) 16px; }
 #экран-01 .афиша{ padding-top: max(8px, calc(12px - var(--недостаёт, 0px) * .013)); }
 #экран-01 .первый-экран__картинка{ height: max(150px, calc(clamp(220px, 32svh, 300px) - var(--недостаёт, 0px) * .25));
         margin-bottom: max(8px, calc(18px - var(--недостаёт, 0px) * .034)); }
-#экран-01 .кикер-афиши{ font-size: max(14px, calc(16px - var(--недостаёт, 0px) * .01));
-        margin-bottom: max(6px, calc(10px - var(--недостаёт, 0px) * .014)); }
-#экран-01 .h1-верх{ font-size: max(16px, calc(20px - var(--недостаёт, 0px) * .014));
-        margin-bottom: max(4px, calc(10px - var(--недостаёт, 0px) * .02)); }
-#экран-01 .h1-крупно{ font-size: max(30px, calc(38px - var(--недостаёт, 0px) * .03)); }
+#экран-01 .кикер-афиши{ margin-bottom: max(6px, calc(10px - var(--недостаёт, 0px) * .014)); }
+#экран-01 .h1-верх{ margin-bottom: max(4px, calc(10px - var(--недостаёт, 0px) * .02)); }
 #экран-01 .черта{ margin: max(10px, calc(16px - var(--недостаёт, 0px) * .02)) 0 max(8px, calc(14px - var(--недостаёт, 0px) * .02)); }
-#экран-01 .лид-афиши{ font-size: max(16px, calc(18px - var(--недостаёт, 0px) * .008)); }
 #экран-01 .кнопки-афиши{ margin-top: max(10px, calc(18px - var(--недостаёт, 0px) * .03)); }
 #экран-01 .кнопки-афиши .кнопка{ padding: max(13px, calc(18px - var(--недостаёт, 0px) * .017)) 34px; }}
+#экран-01 .кикер-афиши::after{ content: ""; width: 26px; height: 2px;
+    background: var(--бордо-свет); flex: none; }
+@media (max-width: 599px){#экран-01 .кикер-афиши{ font-size: 13px; letter-spacing: .08em; gap: 8px; }
+#экран-01 .кикер-афиши::before,#экран-01 .кикер-афиши::after{ width: 18px; }}
 #экран-02 .внутри-сетка{ display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
 #экран-02 .шапка-слева{ position: sticky; top: 32px; display: grid; gap: 14px; justify-items: start; }
 #экран-02 .шапка-слева > *{ margin-bottom: 0; }
+#экран-02 .лид{ max-width: none; text-wrap: pretty; }
 #экран-02 .карточки{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--отступ-блока); }
 #экран-02 .карт{ display: grid; gap: 14px; align-content: start; padding: clamp(20px, 2.2vw, 28px);
-      border-radius: calc(var(--радиус-плитки) * 2); border: var(--нить) solid; }
+      border-radius: var(--радиус-плитки); border: var(--нить) solid; }
 #экран-02 .карт > *{ margin: 0; }
 #экран-02 .карт__верх{ display: flex; align-items: center; gap: 14px; }
 #экран-02 .карт__икон{ display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 50%; }
@@ -434,9 +460,9 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-02 .карт:hover{ transform: translateY(-8px); box-shadow: var(--тень-глубокая, var(--тень)); }
 @media (prefers-reduced-motion: reduce){#экран-02 .карт{ transition: none; }
 #экран-02 .карт:hover{ transform: none; }}
-@media (min-width: 900px){#экран-02 .внутри-сетка{ grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px){#экран-02 .внутри-сетка{ grid-template-columns: minmax(0, 1fr); gap: clamp(22px, 2.2vw, 30px); }
 #экран-02 .шапка-слева{ position: static; max-width: 760px; }
-#экран-02 .карточки{ grid-template-columns: repeat(6, minmax(0, 1fr)); }
+#экран-02 .карточки{ margin-top: 0; grid-template-columns: repeat(6, minmax(0, 1fr)); }
 #экран-02 .карточки > .карт{ grid-column: span 2; }
 #экран-02 .карточки > .карт:first-child{ grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); column-gap: clamp(24px, 3vw, 48px); align-items: start; }
 #экран-02 .карточки > .карт:first-child ul{ grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(20px, 2.4vw, 36px); }
@@ -444,12 +470,15 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 @media (max-width: 899px){#экран-02 .внутри-сетка{ grid-template-columns: 1fr; }
 #экран-02 .шапка-слева{ position: static; }}
 @media (max-width: 599px){#экран-02 .карточки{ grid-template-columns: 1fr; }}
+#экран-02 .кикер{ padding: 0; background: none; border-radius: 0; color: color-mix(in srgb, var(--цвет-акцент-яркий) 60%, var(--цвет-тёмный-текст)); text-transform: uppercase; font-weight: 700; }
+#экран-02 .кикер::before,#экран-02 .кикер::after{ content: ""; flex: none;
+    width: 26px; height: 2px; background: currentColor; }
 #экран-03 .разворот{ display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
 #экран-03 .рассказ{ display: grid; gap: 18px; justify-items: start; }
 #экран-03 .рассказ > *{ margin: 0; }
 #экран-03 h2 em{ font-style: normal; color: var(--цвет-акцент); }
 #экран-03 .кикер{ padding: 0; background: none; border-radius: 0; color: var(--цвет-акцент); text-transform: uppercase; font-weight: 700; }
-#экран-03 .портрет{ position: relative; margin: 0; max-width: 340px; width: 100%; justify-self: center; border-radius: calc(var(--радиус-плитки) * 2); overflow: hidden; box-shadow: var(--тень); }
+#экран-03 .портрет{ position: relative; margin: 0; max-width: 400px; width: 100%; justify-self: center; border-radius: var(--радиус-плитки); overflow: hidden; box-shadow: var(--тень); }
 #экран-03 .портрет img{ display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
 #экран-03 .портрет__имя{ position: absolute; inset: auto 0 0 0; display: grid; gap: 6px; padding: 72px 24px 22px;
       background: linear-gradient(to top, color-mix(in srgb, var(--цвет-тёмный-фон) 88%, transparent), transparent);
@@ -461,13 +490,13 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
       background: var(--цвет-акцент); color: var(--цвет-на-акценте); box-shadow: var(--тень); }
 #экран-03 .портрет__плашка .иконка{ width: 16px; height: 16px; color: currentColor; }
 #экран-03 .факты{ list-style: none; margin: 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-#экран-03 .факт{ display: grid; gap: 8px; align-content: start; padding: 18px; border-radius: calc(var(--радиус-плитки) * 2);
+#экран-03 .факт{ display: grid; gap: 8px; align-content: start; padding: 18px; border-radius: var(--радиус-плитки);
       background: var(--цвет-фон-карточки); border: var(--нить) solid var(--цвет-линия); border-top: 2px solid var(--цвет-акцент); box-shadow: var(--тень); }
 #экран-03 .факт .иконка{ width: 22px; height: 22px; color: var(--цвет-акцент); }
 #экран-03 .факт__главное{ font: 800 var(--кегль-лид)/1.15 var(--шрифт-заголовков); color: var(--цвет-акцент); }
 #экран-03 .факт__пояс{ font-size: var(--кегль-мелкий); line-height: 1.4; color: var(--цвет-текст-мягкий); }
 #экран-03 .подход{ width: 100%; box-sizing: border-box; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: start;
-      padding: 20px 22px; border-radius: calc(var(--радиус-плитки) * 2);
+      padding: 20px 22px; border-radius: var(--радиус-плитки);
       background: color-mix(in srgb, var(--цвет-акцент) 5%, var(--цвет-фон-карточки));
       border: var(--нить) solid color-mix(in srgb, var(--цвет-акцент) 22%, transparent); }
 #экран-03 .подход__знак{ display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--радиус);
@@ -475,14 +504,17 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-03 .подход__знак .иконка{ width: 22px; height: 22px; color: currentColor; }
 #экран-03 .подход p{ margin: 0; font-size: var(--кегль-лид); line-height: 1.45; font-weight: 600; color: var(--цвет-текст); }
 #экран-03 .подход em{ font-style: normal; color: var(--цвет-акцент); }
-#экран-03 .обучение{ margin-top: clamp(36px, 5vw, 64px); display: grid; gap: 18px; }
+#экран-03 .обучение{ margin-top: clamp(20px, 2.2vw, 28px); display: grid; gap: 18px; }
 #экран-03 .обучение__метка{ margin: 0; font-size: var(--кегль-текст); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--цвет-текст-мягкий); }
 #экран-03 .ленты{ list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
-#экран-03 .серт{ display: grid; grid-template-rows: auto 1fr; height: 100%; border: var(--нить) solid var(--цвет-линия); border-radius: calc(var(--радиус-плитки) * 2); overflow: hidden; text-decoration: none;
+#экран-03 .серт{ display: grid; grid-template-rows: auto 1fr; height: 100%; border: var(--нить) solid var(--цвет-линия); border-radius: var(--радиус-плитки); overflow: hidden; text-decoration: none;
       background: var(--цвет-фон-карточки); color: var(--цвет-текст); }
 #экран-03 .серт:hover{ box-shadow: var(--тень); }
-#экран-03 .серт__кадр{ display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 10px; margin: 0; border-radius: 0; box-shadow: none; background: var(--цвет-фон-2); }
-#экран-03 .серт__кадр img{ display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+#экран-03 .серт__кадр{ position: relative; aspect-ratio: 1.414; padding: 0; margin: 0;
+    border-radius: 0; box-shadow: none; background: var(--цвет-фон-2); overflow: hidden; }
+#экран-03 .серт__кадр img{ position: absolute; inset: 0; display: block; aspect-ratio: auto;
+    width: 100%; height: 100%; object-fit: contain; object-position: 50% 0;
+    border-radius: var(--радиус-малый); }
 #экран-03 .серт__подпись{ display: grid; gap: 4px; align-content: start; padding: 12px 14px 14px; border-top: var(--нить) solid var(--цвет-линия); }
 #экран-03 .серт__назв{ font-size: var(--кегль-мелкий); line-height: 1.35; font-weight: 700; }
 #экран-03 .серт__где{ font-size: var(--кегль-мелкий); line-height: 1.35; color: var(--цвет-текст-мягкий); }
@@ -499,15 +531,17 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-03 .факт:hover,#экран-03 .серт:hover{ transform: translateY(-8px); box-shadow: var(--тень-глубокая, var(--тень)); }
 @media (prefers-reduced-motion: reduce){#экран-03 .факт,#экран-03 .серт{ transition: none; }
 #экран-03 .факт:hover,#экран-03 .серт:hover{ transform: none; }}
+#экран-03 .кикер::before,#экран-03 .кикер::after{ content: ""; flex: none;
+    width: 26px; height: 2px; background: currentColor; }
 #экран-04 .шапка-центр{ display: grid; gap: 14px; justify-items: center; text-align: center; max-width: 44rem; margin: 0 auto clamp(28px, 4vw, 52px); }
 #экран-04 .шапка-центр > *{ margin-bottom: 0; }
 #экран-04 .кикер{ padding: 0; background: none; border-radius: 0; color: color-mix(in srgb, var(--цвет-акцент-яркий) 60%, var(--цвет-тёмный-текст)); text-transform: uppercase; font-weight: 700; }
 #экран-04 h2 em{ font-style: normal; color: color-mix(in srgb, var(--цвет-акцент-яркий) 60%, var(--цвет-тёмный-текст)); }
 #экран-04 .цены{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--отступ-блока); align-items: stretch; }
 #экран-04 .тариф{ display: grid; min-width: 0; align-content: start; gap: 12px; padding: clamp(24px, 2.4vw, 32px);
-      border-radius: calc(var(--радиус-плитки) * 2); background: var(--цвет-фон-карточки); color: var(--цвет-текст); box-shadow: var(--тень); }
+      border-radius: var(--радиус-плитки); background: var(--цвет-фон-карточки); color: var(--цвет-текст); box-shadow: var(--тень); }
 #экран-04 .тариф > *{ margin: 0; }
-#экран-04 .тариф__плитка{ display: grid; place-items: center; width: 52px; height: 52px; border-radius: var(--радиус-плитки);
+#экран-04 .тариф__плитка{ display: grid; place-items: center; width: 52px; height: 52px; border-radius: var(--радиус-карточки);
       background: var(--цвет-акцент); color: var(--цвет-на-акценте); }
 #экран-04 .тариф__плитка .иконка{ width: 24px; height: 24px; color: currentColor; }
 #экран-04 .тариф h3{ padding-top: 6px; font: 800 var(--кегль-лид)/1.2 var(--шрифт-заголовков); color: var(--цвет-текст); }
@@ -518,17 +552,17 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-04 .тариф li{ display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; font-size: var(--кегль-текст); line-height: 1.45; }
 #экран-04 .тариф li .иконка{ width: 18px; height: 18px; margin-top: 3px; color: var(--цвет-акцент); }
 #экран-04 .бесплатно{ display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center; margin-top: var(--отступ-блока);
-      padding: clamp(18px, 2vw, 24px) clamp(20px, 2.4vw, 32px); border-radius: calc(var(--радиус-плитки) * 2);
+      padding: clamp(18px, 2vw, 24px) clamp(20px, 2.4vw, 32px); border-radius: var(--радиус-плитки);
       background: color-mix(in srgb, var(--цвет-тёмный-фон-4) 70%, transparent);
       border: var(--нить) solid color-mix(in srgb, var(--цвет-акцент-яркий) 45%, transparent); color: var(--цвет-тёмный-текст); }
 #экран-04 .бесплатно > *{ margin: 0; }
-#экран-04 .бесплатно__плитка{ display: grid; place-items: center; width: 52px; height: 52px; border-radius: var(--радиус-плитки);
+#экран-04 .бесплатно__плитка{ display: grid; place-items: center; width: 52px; height: 52px; border-radius: var(--радиус-карточки);
       background: var(--цвет-акцент); color: var(--цвет-на-акценте); }
 #экран-04 .бесплатно__плитка .иконка{ width: 24px; height: 24px; color: currentColor; }
 #экран-04 .бесплатно__текст{ display: grid; gap: 4px; }
 #экран-04 .бесплатно__главное{ font: 800 var(--кегль-лид)/1.2 var(--шрифт-заголовков); }
 #экран-04 .бесплатно__пояс{ font-size: var(--кегль-текст); color: var(--цвет-тёплый-мягкий); }
-#экран-04 .бесплатно .кнопка{ background: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); border-radius: 999px; font-weight: 800; box-shadow: 0 14px 40px color-mix(in srgb, var(--цвет-акцент-яркий) 45%, transparent); }
+#экран-04 .бесплатно .кнопка{ background: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); border-radius: var(--кнопка-радиус); font-weight: 800;  }
 #экран-04 .бесплатно .кнопка:hover{ background: var(--цвет-акцент-яркий); border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
 @media (max-width: 999px){#экран-04 .цены{ grid-template-columns: 1fr; max-width: 30rem; margin: 0 auto; }
 #экран-04 .бесплатно{ grid-template-columns: auto minmax(0, 1fr); }
@@ -537,6 +571,8 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-04 .тариф:hover{ transform: translateY(-8px); box-shadow: var(--тень-глубокая, var(--тень)); }
 @media (prefers-reduced-motion: reduce){#экран-04 .тариф{ transition: none; }
 #экран-04 .тариф:hover{ transform: none; }}
+#экран-04 .кикер::before,#экран-04 .кикер::after{ content: ""; flex: none;
+    width: 26px; height: 2px; background: currentColor; }
 #экран-05 .шапка-центр{ display: grid; gap: 14px; justify-items: center; text-align: center; max-width: 44rem; margin: 0 auto clamp(28px, 4vw, 52px); }
 #экран-05 .шапка-центр > *{ margin: 0; }
 #экран-05 .кикер{ padding: 0; background: none; border-radius: 0; color: var(--цвет-акцент); text-transform: uppercase; font-weight: 700; }
@@ -546,7 +582,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-05 .отзывы{ display: flex; flex-wrap: wrap; justify-content: center; gap: var(--отступ-блока); }
 #экран-05 .отзыв{ flex: 0 1 calc((100% - 2 * var(--отступ-блока)) / 3); min-width: 0; box-sizing: border-box;
       display: grid; gap: 14px; align-content: start; margin: 0; padding: clamp(22px, 2.2vw, 30px);
-      border-radius: calc(var(--радиус-плитки) * 2); background: var(--цвет-фон-карточки); color: var(--цвет-текст);
+      border-radius: var(--радиус-плитки); background: var(--цвет-фон-карточки); color: var(--цвет-текст);
       border: var(--нить) solid var(--цвет-линия); box-shadow: var(--тень);
       transition: transform .3s ease, box-shadow .3s ease; }
 #экран-05 .отзыв > *{ margin: 0; }
@@ -560,6 +596,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
       border: 2px solid var(--цвет-фон-карточки); background: var(--цвет-акцент); color: var(--цвет-на-акценте);
       font: 800 var(--кегль-текст)/1 var(--шрифт-заголовков); letter-spacing: .02em; transition: transform .3s ease; }
 #экран-05 .отзыв:hover .знак span{ transform: scale(1.08); }
+
 
   @keyframes экран05-кольцо { to { transform: rotate(360deg); } }
 #экран-05 .кто__имя{ display: block; font: 800 var(--кегль-лид)/1.2 var(--шрифт-заголовков); }
@@ -576,15 +613,17 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 @media (prefers-reduced-motion: reduce){#экран-05 .отзыв,#экран-05 .знак span{ transition: none; }
 #экран-05 .отзыв:hover,#экран-05 .отзыв:hover .знак span{ transform: none; }
 #экран-05 .знак::before{ animation: none; }}
+#экран-05 .кикер::before,#экран-05 .кикер::after{ content: ""; flex: none;
+    width: 26px; height: 2px; background: currentColor; }
 #экран-06 .шапка-центр{ display: grid; gap: 14px; justify-items: center; text-align: center; max-width: 44rem; margin: 0 auto clamp(28px, 4vw, 52px); }
 #экран-06 .шапка-центр > *{ margin: 0; }
 #экран-06 .кикер{ padding: 0; background: none; border-radius: 0; color: color-mix(in srgb, var(--цвет-акцент-яркий) 60%, var(--цвет-тёмный-текст)); text-transform: uppercase; font-weight: 700; }
 #экран-06 h2 em{ font-style: normal; color: color-mix(in srgb, var(--цвет-акцент-яркий) 60%, var(--цвет-тёмный-текст)); }
-#экран-06 .лид{ color: var(--цвет-тёплый-мягкий); }
+#экран-06 .лид{ color: var(--цвет-тёплый-мягкий); max-width: none; text-wrap: pretty; }
 #экран-06 .вопросы{ position: relative; display: grid; gap: 16px; max-width: 64rem; margin: 0 auto; }
 #экран-06 .вопросы::before{ content: ""; position: absolute; top: 28px; bottom: 28px; left: calc(clamp(18px, 2.2vw, 26px) + 27px); width: var(--нить);
       background: color-mix(in srgb, var(--цвет-тёплый-мягкий) 35%, transparent); }
-#экран-06 .вопрос{ position: relative; border-radius: calc(var(--радиус-плитки) * 2); background: var(--цвет-фон-карточки); color: var(--цвет-текст); box-shadow: var(--тень);
+#экран-06 .вопрос{ position: relative; border-radius: var(--радиус-плитки); background: var(--цвет-фон-карточки); color: var(--цвет-текст); box-shadow: var(--тень);
       transition: transform .3s ease, box-shadow .3s ease; }
 #экран-06 .вопрос:hover{ transform: translateY(-6px); box-shadow: var(--тень-глубокая, var(--тень)); }
 #экран-06 .вопрос summary{ display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(14px, 2vw, 22px); align-items: center; cursor: pointer; list-style: none;
@@ -602,7 +641,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-06 .вопрос p{ margin: 0; padding: 0 clamp(18px, 2.2vw, 26px) clamp(18px, 2vw, 24px) calc(clamp(18px, 2.2vw, 26px) + 54px + clamp(14px, 2vw, 22px));
       font-size: var(--кегль-текст); line-height: 1.6; color: var(--цвет-текст-мягкий); max-width: 46rem; }
 #экран-06 .приглашение{ max-width: 58rem; margin: clamp(32px, 4vw, 52px) auto 0; padding: clamp(24px, 3vw, 36px) clamp(20px, 3vw, 44px);
-      border-radius: calc(var(--радиус-плитки) * 2); border: var(--нить) solid color-mix(in srgb, var(--цвет-тёплый-мягкий) 30%, transparent);
+      border-radius: var(--радиус-плитки); border: var(--нить) solid color-mix(in srgb, var(--цвет-тёплый-мягкий) 30%, transparent);
       background: color-mix(in srgb, var(--цвет-тёмный-фон-4) 55%, transparent); text-align: center;
       font: 700 var(--кегль-лид)/1.45 var(--шрифт-заголовков); color: var(--цвет-тёмный-текст); }
 #экран-06 .приглашение{ position: relative; }
@@ -610,7 +649,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
       border-radius: var(--кнопка-радиус); background: var(--цвет-акцент-яркий); }
 #экран-06 .приглашение em{ font-style: normal; color: var(--цвет-тёплый-мягкий); }
 #экран-06 .кнопка-под{ display: flex; justify-content: center; margin-top: clamp(24px, 3vw, 36px); }
-#экран-06 .кнопка-под .кнопка{ background: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); border-radius: 999px; font-weight: 800; box-shadow: 0 14px 40px color-mix(in srgb, var(--цвет-акцент-яркий) 45%, transparent); }
+#экран-06 .кнопка-под .кнопка{ background: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); border-radius: var(--кнопка-радиус); font-weight: 800;  }
 #экран-06 .кнопка-под .кнопка:hover{ background: var(--цвет-акцент-яркий); border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
 @media (max-width: 599px){#экран-06 .вопрос__номер{ width: 44px; height: 44px; }
 #экран-06 .вопросы::before{ left: calc(clamp(18px, 2.2vw, 26px) + 22px); }
@@ -618,20 +657,22 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-06 .кнопка-под .кнопка{ width: 100%; justify-content: center; }}
 @media (prefers-reduced-motion: reduce){#экран-06 .вопрос,#экран-06 .вопрос summary::after{ transition: none; }
 #экран-06 .вопрос:hover{ transform: none; }}
+#экран-06 .кикер::before,#экран-06 .кикер::after{ content: ""; flex: none;
+    width: 26px; height: 2px; background: currentColor; }
 #экран-07 .шапка-лево{ display: grid; gap: 14px; margin: 0 0 clamp(28px, 4vw, 52px); }
 #экран-07 .шапка-лево > *{ margin-bottom: 0; max-width: 42rem; }
 #экран-07 .шапка-лево,#экран-07 .вид-города,#экран-07 .тело{ max-width: 66rem; margin-inline: auto; }
-#экран-07 .приглашение .кнопка{ background: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); border-radius: 999px; font-weight: 800; box-shadow: 0 14px 40px color-mix(in srgb, var(--цвет-акцент-яркий) 45%, transparent); }
+#экран-07 .приглашение .кнопка{ background: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-акцент-яркий) 84%, var(--цвет-тёмный-текст)); border-radius: var(--кнопка-радиус); font-weight: 800;  }
 #экран-07 .приглашение .кнопка:hover{ background: var(--цвет-акцент-яркий); border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
 #экран-07 .шапка-лево .лид{ max-width: none; color: var(--цвет-текст-мягкий); }
 #экран-07 .кикер{ padding: 0; background: none; border-radius: 0; color: var(--цвет-акцент); text-transform: uppercase; font-weight: 700; }
 #экран-07 h2 em{ font-style: normal; color: var(--цвет-акцент); }
-#экран-07 .вид-города{ margin: 0 auto clamp(24px, 3.4vw, 44px); max-width: 66rem; border-radius: calc(var(--радиус-плитки) * 2); box-shadow: var(--тень); }
-#экран-07 .вид-города img{ display: block; width: 100%; height: auto; aspect-ratio: 21 / 8; object-fit: cover; object-position: 50% 62%; border-radius: calc(var(--радиус-плитки) * 2); }
+#экран-07 .вид-города{ margin: 0 auto clamp(24px, 3.4vw, 44px); max-width: 66rem; border-radius: var(--радиус-плитки); box-shadow: var(--тень); }
+#экран-07 .вид-города img{ display: block; width: 100%; height: auto; aspect-ratio: 21 / 8; object-fit: cover; object-position: 50% 62%; border-radius: var(--радиус-плитки); }
 #экран-07 .тело{ display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 3.4vw, 48px); align-items: stretch; max-width: 66rem; }
 #экран-07 .способы{ display: grid; gap: 14px; align-content: start; }
 #экран-07 .способ{ display: flex; align-items: center; gap: 18px; padding: clamp(16px, 2vw, 22px) clamp(18px, 2.4vw, 26px);
-      border-radius: calc(var(--радиус-плитки) * 2); border: var(--нить) solid; text-decoration: none; min-width: 0; }
+      border-radius: var(--радиус-плитки); border: var(--нить) solid; text-decoration: none; min-width: 0; }
 #экран-07 .способ--главный{ padding: clamp(24px, 3vw, 36px) clamp(20px, 2.6vw, 30px); }
 #экран-07 .способ__икон{ flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; }
 #экран-07 .способ--главный .способ__икон{ width: 64px; height: 64px; }
@@ -641,7 +682,7 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-07 .способ__имя{ font-weight: 700; font-size: var(--кегль-лид); line-height: 1.25; }
 #экран-07 .способ--главный .способ__имя{ font-size: var(--кегль-лид); }
 #экран-07 .способ__адрес{ font-size: var(--кегль-текст); line-height: 1.4; overflow-wrap: anywhere; }
-#экран-07 .приглашение{ display: grid; gap: 16px; align-content: center; padding: clamp(26px, 3.2vw, 44px); border-radius: calc(var(--радиус-плитки) * 2); border: var(--нить) solid; }
+#экран-07 .приглашение{ display: grid; gap: 16px; align-content: center; padding: clamp(26px, 3.2vw, 44px); border-radius: var(--радиус-плитки); border: var(--нить) solid; }
 #экран-07 .приглашение > *{ margin: 0; }
 #экран-07 .приглашение h3{ font-weight: 700; font-size: var(--кегль-лид); line-height: 1.2; }
 #экран-07 .приглашение p{ font-size: var(--кегль-текст); line-height: 1.6; }
@@ -658,6 +699,8 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 @media (max-width: 899px){#экран-07 .тело{ grid-template-columns: 1fr; }
 #экран-07 .вид-города img{ aspect-ratio: 3 / 2; object-position: 40% 60%; }}
 @media (max-width: 599px){#экран-07 .приглашение .кнопка{ width: 100%; justify-content: center; }}
+#экран-07 .кикер::before,#экран-07 .кикер::after{ content: ""; flex: none;
+    width: 26px; height: 2px; background: currentColor; }
 #экран-08 .сетка{ display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
 #экран-08 .знак{ display: block; font-weight: 700; font-size: var(--кегль-лид); line-height: 1.25; margin: 0 0 10px; }
 #экран-08 .подпись{ margin: 0; font-size: var(--кегль-текст); line-height: 1.5; max-width: 26rem; }
@@ -677,4 +720,5 @@ body.панель-с-переходом .липкая-кнопка{ transition: 
 #экран-08 .сетка > :first-child{ grid-column: 1 / -1; }}
 @media (max-width: 599px){#экран-08 .сетка{ grid-template-columns: 1fr; }
 #экран-08 .низ{ flex-direction: column; flex-wrap: nowrap; align-items: stretch; }}
+
 
